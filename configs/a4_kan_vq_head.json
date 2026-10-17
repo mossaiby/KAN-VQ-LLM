@@ -1,0 +1,93 @@
+{
+  "experiment_name": "a4_kan_vq_head",
+  "model": {
+    "vocab_size": 16384,
+    "embed_dim": 384,
+    "num_layers": 8,
+    "nhead": 6,
+    "ffn_type": "kan",
+    "mlp_ratio": 2.0,
+    "max_seq_len": 512,
+    "dropout": 0.0,
+    "grid_size": 4,
+    "grid_range": [
+      -1.5,
+      1.5
+    ],
+    "vq_mode": "head",
+    "bottleneck_layer": 4,
+    "bottleneck_codebook_size": 4096,
+    "bottleneck_alpha": 0.25,
+    "commitment_cost": 0.05,
+    "vq_init_std": 0.02,
+    "logit_scale": 16.0,
+    "tie_embeddings": false
+  },
+  "data": {
+    "local_data_file": null,
+    "dataset_name": "HuggingFaceFW/fineweb-edu",
+    "dataset_config": "sample-10BT",
+    "dataset_split": "train",
+    "text_column": "text",
+    "data_dir": "./data_cache",
+    "max_articles": 1200000,
+    "min_char_length": 120,
+    "val_fraction": 0.005,
+    "tokenize_chunk_size": 4000,
+    "tokenizer_sample_docs": 50000,
+    "reuse_tokenized_cache": true,
+    "special_tokens": [
+      "<|endoftext|>",
+      "<unk>",
+      "<pad>"
+    ]
+  },
+  "training": {
+    "seed": 1337,
+    "device": "cuda",
+    "precision": "bf16",
+    "use_compile": false,
+    "use_checkpointing": false,
+    "batch_size": 32,
+    "grad_accum_steps": 2,
+    "max_steps": 25000,
+    "warmup_steps": 500,
+    "rewarm_steps": 500,
+    "max_lr": 0.0004,
+    "min_lr": 4e-05,
+    "continuation_lr": 0.0002,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "log_interval": 50,
+    "eval_interval": 500,
+    "eval_iters": 25,
+    "sample_interval": 2500,
+    "checkpoint_interval": 2500,
+    "min_free_disk_gb": 2.5
+  },
+  "inference": {
+    "max_new_tokens": 100,
+    "temperature": 0.7,
+    "top_k": 40,
+    "top_p": 0.9,
+    "repetition_penalty": 1.15,
+    "prompts": [
+      "Photosynthesis is the biological process by which",
+      "In computer science, a hash table works by",
+      "The history of ancient Rome began when"
+    ]
+  },
+  "paths": {
+    "checkpoint_dir": "checkpoints\\a4_kan_vq_head",
+    "checkpoint_name": "model",
+    "config_path": "config.json",
+    "plot_filename": "training_curves.png",
+    "metrics_jsonl": "metrics.jsonl",
+    "plot_dpi": 200
+  }
+}

@@ -1,0 +1,142 @@
+# ==========================================
+# 1. KAN-VQ Data Streams & Model Checkpoints
+# ==========================================
+# Memory-mapped binary token caches & datasets
+data/
+data_cache/
+data_kan_vq/
+*.bin
+*.arrow
+*.parquet
+
+# Model checkpoints & atomic save temp files
+checkpoints/
+checkpoints_*/
+kan_vq_scaled_checkpoints/
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.tmp
+
+# Keep generated JSON configs if desired, or uncomment below to ignore:
+# configs/*.json
+
+# ==========================================
+# 2. LaTeX & BibTeX Build / Temporary Files
+# ==========================================
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.gof
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lol
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.toc
+*.vrb
+*.xdv
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.thm
+*.loa
+*.dvi
+*.ps
+*.spl
+*.bbl-SAVE-ERROR
+*.blg-SAVE-ERROR
+texput.log
+_minted-*
+svg-inkscape/
+
+# Uncomment if you do NOT want compiled PDFs tracked in Git:
+# *.pdf
+
+# ==========================================
+# 3. Python & PyTorch / CUDA Caches
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyTorch / Triton / TorchInductor compile caches
+.triton/
+torchinductor_*/
+/tmp/torchinductor_*
+
+# ==========================================
+# 4. Virtual Environments & Secrets
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+.conda/
+.env
+.env.*
+*.pem
+*.key
+
+# ==========================================
+# 5. Experiment Tracking & Evaluation Logs
+# ==========================================
+wandb/
+runs/
+lightning_logs/
+lm_eval_results/
+*.jsonl
+
+# ==========================================
+# 6. IDEs, Jupyter & OS Artifacts
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.ipynb_checkpoints/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
